@@ -8,6 +8,7 @@ use App\Models\Document;
 use Illuminate\Http\RedirectResponse;
 use Inertia\Inertia;
 use Inertia\Response;
+use App\Policies\DocumentPolicy;
 
 class DocumentController extends Controller
 {
@@ -39,6 +40,7 @@ class DocumentController extends Controller
 
     public function show(Document $document): Response
     {
+        $this->authorize('view', $document);
         $document->load('latestExtraction');
 
         return inertia('Documents/Show', [

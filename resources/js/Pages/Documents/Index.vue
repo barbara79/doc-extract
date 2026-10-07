@@ -73,14 +73,16 @@ function handleFileChange(event) {
                                 <p class="font-medium">{{ doc.original_filename }}</p>
                                 <p class="text-sm text-gray-500">{{ doc.document_type }}</p>
                             </div>
-                            <span class="text-xs px-2 py-1 rounded-full"
-                                :class="{
-                                    'bg-yellow-100 text-yellow-800': doc.status === 'received',
-                                    'bg-blue-100 text-blue-800': doc.status === 'extracted',
-                                    'bg-green-100 text-green-800': doc.status === 'approved',
-                                }">
-                                {{ doc.status }}
-                            </span>
+                                <span class="text-xs px-2 py-1 rounded-full"
+                                    :class="{
+                                        'bg-yellow-100 text-yellow-800': doc.status === 'received',
+                                        'bg-blue-100 text-blue-800': doc.status === 'extracted',
+                                        'bg-green-100 text-green-800': doc.status === 'validated',
+                                        'bg-red-100 text-red-800': doc.status === 'needs_review',
+                                        'bg-emerald-100 text-emerald-800': doc.status === 'approved',
+                                    }">
+                                    {{ doc.status }}
+                                </span>
                         </div>
                     </Link>
                 </div>
