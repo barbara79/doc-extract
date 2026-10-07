@@ -39,8 +39,8 @@ Not yet implemented (see Roadmap below):
 
 ## Roadmap
 
-- [ ] State machine: `received` → `extracted` → `validated` → `needs_review` → `approved`
-- [ ] Confidence scoring per extracted field
+- [x] State machine: `received` → `extracted` → `validated` → `needs_review` → `approved`
+- [x] Confidence scoring per extracted field
 - [ ] Review screen for human correction of low-confidence fields
 - [ ] Retry/backoff on extraction failures, with a failed-job path
 - [ ] Cost-per-document calculation and observability (token usage, latency, cost)
